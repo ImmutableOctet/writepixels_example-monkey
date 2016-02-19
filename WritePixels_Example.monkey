@@ -36,7 +36,12 @@ Class Application Extends App
 			RandomizeImage(RawData)
 			
 			#If WRITEPIXELS_DEMO_RELATIVE
-				Self.Data.WritePixels(RawData, 0, 0, FrameWidth, FrameHeight)
+				Local I:= Self.Data.GrabImage(EntryNumber * FrameWidth, 0, FrameWidth, FrameHeight, 1)
+				
+				I.WritePixels(RawData, 0, 0, FrameWidth, FrameHeight)
+				
+				' Just a formality, this doesn't do anything right now.
+				I.Discard()
 			#Else
 				Self.Data.WritePixels(RawData, EntryNumber * FrameWidth, 0, FrameWidth, FrameHeight)
 			#End
