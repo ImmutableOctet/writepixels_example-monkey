@@ -35,10 +35,10 @@ Class Application Extends App
 		For Local EntryNumber:= 0 Until FrameCount
 			RandomizeImage(RawData)
 			
-			#If Not WRITEPIXELS_DEMO_RELATIVE
-				Self.Data.WritePixels(RawData, EntryNumber * FrameWidth, 0, FrameWidth, FrameHeight)
-			#Else
+			#If WRITEPIXELS_DEMO_RELATIVE
 				Self.Data.WritePixels(RawData, 0, 0, FrameWidth, FrameHeight)
+			#Else
+				Self.Data.WritePixels(RawData, EntryNumber * FrameWidth, 0, FrameWidth, FrameHeight)
 			#End
 		Next
 		
