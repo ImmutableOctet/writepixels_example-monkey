@@ -30,7 +30,7 @@ Class Application Extends App
 			Self.Data = CreateImage(FrameWidth, FrameHeight, FrameCount, Image.MidHandle)
 		#End
 		
-		Local RawData:= New Int[FrameWidth*FrameHeight*4]
+		Local RawData:= New Int[FrameWidth*FrameHeight]
 		
 		For Local EntryNumber:= 0 Until FrameCount
 			RandomizeImage(RawData)
